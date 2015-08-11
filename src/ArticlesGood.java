@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * Created by cyc10ne on 08.08.2015.
  */
@@ -64,18 +60,16 @@ public abstract class ArticlesGood {
                 '}';
     }
 
+    public abstract int compareTo(ArticlesGood boots);
 
     public static void main(String[] args) {
         Boots boots = new Boots();
-        Boots boots1 = new Boots();
         boots.insert();
-        System.out.println(boots.count());
-        System.out.println(boots.bootsList.toString());
-        System.out.println(boots.bootsList.get(1));
-        List<Boots> compareBoots = new ArrayList<Boots>(boots.bootsList);
-        Collections.sort(compareBoots,new CostCompare());
-        System.out.println(compareBoots);
+        boots.print();
+        boots.sortCost();
+        boots.print();
 
     }
+
 
 }

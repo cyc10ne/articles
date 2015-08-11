@@ -1,15 +1,14 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by cyc10ne on 08.08.2015.
  */
-public class Boots extends ArticlesGood/* implements Comparator<Double> */{
+public class Boots extends ArticlesGood implements Comparable<ArticlesGood>{
 
     int size;
     String color;
-    int count;
-    String name = "Boots";
 
     public Boots() {
     }
@@ -58,11 +57,6 @@ public class Boots extends ArticlesGood/* implements Comparator<Double> */{
     public String getColor() {
         return color;
     }
-/*
-    @Override
-    public int compare(Double o1, Double o2) {
-        return 0;
-    }*/
 
     public void setColor(String color) {
         this.color = color;
@@ -77,9 +71,7 @@ public class Boots extends ArticlesGood/* implements Comparator<Double> */{
                 '}';
     }
 
-
     List<Boots> bootsList = new ArrayList<Boots>();
-
 
     List<Boots> insert() {
         bootsList.add(new Boots(43, "black"));
@@ -97,10 +89,33 @@ public class Boots extends ArticlesGood/* implements Comparator<Double> */{
     }
 
     int count() {
+        int count = 0;
         while (count < bootsList.size())
             count++;
 
         return count;
     }
+
+    List<Boots> sortCost(){
+        Collections.sort(bootsList);
+        return bootsList;
+    }
+
+    @Override
+    public int compareTo(ArticlesGood boots) {
+        if (this.cost < boots.getCost())
+            return -1;
+        else if (this.cost == boots.getCost())
+            return 0;
+        else
+            return 1;
+    }
+
+    public void print(){
+        for(Boots b: bootsList)
+            System.out.println(b);
+    }
+
 }
+
 
