@@ -5,15 +5,15 @@ import java.util.List;
 /**
  * Created by cyc10ne on 08.08.2015.
  */
-public class Boots extends ArticlesGood implements Comparable<ArticlesGood>{
+public class Shoes extends ArticlesGood implements Comparable<ArticlesGood>{
 
     int size;
     String color;
 
-    public Boots() {
+    public Shoes() {
     }
 
-    public Boots(int size, String color) {
+    public Shoes(int size, String color) {
 
         this.size = size;
 
@@ -64,49 +64,49 @@ public class Boots extends ArticlesGood implements Comparable<ArticlesGood>{
 
     @Override
     public String toString() {
-        return "Boots{" +
+        return "Shoes{" +
                 "size=" + size +
                 ", color='" + color + '\'' +
                 ", cost=" + cost +
                 '}';
     }
 
-    List<Boots> bootsList = new ArrayList<Boots>();
+    List<Shoes> shoesList = new ArrayList<Shoes>();
 
-    List<Boots> insert() {
-        bootsList.add(new Boots(43, "black"));
-        bootsList.add(new Boots(39, "red"));
-        bootsList.add(new Boots(41, "brown"));
-        bootsList.add(new Boots(43, "black"));
-        bootsList.add(new Boots(45, "yellow"));
-        bootsList.add(new Boots(44, "black"));
-        bootsList.add(new Boots(40, "green"));
-        bootsList.add(new Boots(41, "brown"));
-        bootsList.add(new Boots(44, "black"));
-        bootsList.add(new Boots(39, "red"));
+    List<Shoes> insert() {
+        shoesList.add(new Shoes(43, "black"));
+        shoesList.add(new Shoes(39, "red"));
+        shoesList.add(new Shoes(41, "brown"));
+        shoesList.add(new Shoes(43, "black"));
+        shoesList.add(new Shoes(45, "yellow"));
+        shoesList.add(new Shoes(44, "black"));
+        shoesList.add(new Shoes(40, "green"));
+        shoesList.add(new Shoes(41, "brown"));
+        shoesList.add(new Shoes(44, "black"));
+        shoesList.add(new Shoes(39, "red"));
 
-        return bootsList;
+        return shoesList;
     }
 
     int count() {
         int count = 0;
-        while (count < bootsList.size())
+        while (count < shoesList.size())
             count++;
 
         return count;
     }
 
-    List<Boots> sortCost(){
-        Collections.sort(bootsList);
-        return bootsList;
+    List<Shoes> sortCost(){
+        Collections.sort(shoesList);
+        return shoesList;
     }
 
     @Override
-    public int compareTo(ArticlesGood boots) {
-        if (this.cost < boots.getCost())
+    public int compareTo(ArticlesGood shoes) {
+        if (this.cost < shoes.getCost())
             return -1;
         else
-            if (this.cost == boots.getCost())
+            if (this.cost == shoes.getCost())
             return 0;
         else
             return 1;
@@ -114,14 +114,14 @@ public class Boots extends ArticlesGood implements Comparable<ArticlesGood>{
 
     Object accessIndex(int index) {
         Object a = null;
-        for (int i = 0; i < bootsList.size(); i++)
+        for (int i = 0; i < shoesList.size(); i++)
             if (i == index)
-                a = bootsList.get(index);
+                a = shoesList.get(index);
         return a;
     }
 
     public void print(){
-        for(Boots b: bootsList)
+        for(Shoes b: shoesList)
             System.out.println(b);
     }
 

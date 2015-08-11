@@ -63,11 +63,20 @@ public abstract class ArticlesGood {
     public abstract int compareTo(ArticlesGood boots);
 
     public static void main(String[] args) {
-        Boots boots = new Boots();
+            Boots boots = new Boots();
+            Shoes shoes = new Shoes();
         boots.insert();
         boots.print();
+            System.out.println();
         boots.sortCost();
         boots.print();
+            System.out.println();
+        shoes.insert();
+        shoes.print();
+            System.out.println();
+        shoes.sortCost();
+        shoes.print();
+            System.out.println();
 
     }
 
