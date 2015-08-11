@@ -19,28 +19,28 @@ public class Shoes extends ArticlesGood implements Comparable<ArticlesGood>{
 
         switch (getSize()) {
             case 39:
-                cost = 24.55;
+                cost = 14.05;
                 break;
             case 40:
-                cost = 25.35;
+                cost = 15.65;
                 break;
             case 41:
-                cost = 26.78;
+                cost = 16.58;
                 break;
             case 42:
-                cost = 27.50;
+                cost = 17.50;
                 break;
             case 43:
-                cost = 28.70;
+                cost = 18.80;
                 break;
             case 44:
-                cost = 29.50;
+                cost = 19.60;
                 break;
             case 45:
-                cost = 31.50;
+                cost = 21.40;
                 break;
             case 46:
-                cost = 32.10;
+                cost = 22.30;
                 break;
         }
         this.color = color;
@@ -71,7 +71,7 @@ public class Shoes extends ArticlesGood implements Comparable<ArticlesGood>{
                 '}';
     }
 
-    List<Shoes> shoesList = new ArrayList<Shoes>();
+        List<Shoes> shoesList = new ArrayList<Shoes>();
 
     List<Shoes> insert() {
         shoesList.add(new Shoes(43, "black"));
@@ -124,9 +124,6 @@ public class Shoes extends ArticlesGood implements Comparable<ArticlesGood>{
         for(Shoes b: shoesList)
             System.out.println(b);
     }
-
-
-
 }
 
 

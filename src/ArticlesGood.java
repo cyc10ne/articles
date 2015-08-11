@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by cyc10ne on 08.08.2015.
  */
@@ -62,6 +65,13 @@ public abstract class ArticlesGood {
 
     public abstract int compareTo(ArticlesGood boots);
 
+    static double averageCost(List<ArticlesGood> articlesGood){
+        double element = 0.0;
+        for(int i = 0; i < articlesGood.size(); i++)
+             element += articlesGood.get(i).getCost();
+         return element/articlesGood.size();
+    }
+
     public static void main(String[] args) {
             Boots boots = new Boots();
             Shoes shoes = new Shoes();
@@ -77,7 +87,10 @@ public abstract class ArticlesGood {
         shoes.sortCost();
         shoes.print();
             System.out.println();
-
+        List<ArticlesGood> agShoes = new ArrayList<ArticlesGood>(shoes.shoesList);
+        List<ArticlesGood> agBoots = new ArrayList<ArticlesGood>(boots.bootsList);
+        System.out.println("Средняя цена туфлей: " + averageCost(agShoes));
+        System.out.println("Средняя цена ботинок: " + averageCost(agBoots));
     }
 
 
