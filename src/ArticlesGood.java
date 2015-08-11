@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Created by cyc10ne on 08.08.2015.
  */
@@ -5,26 +9,27 @@ public abstract class ArticlesGood {
     double cost;
     String name;
 
-    public ArticlesGood(){}
+    public ArticlesGood() {
+    }
 
-    public ArticlesGood(double cost, String name){
+    public ArticlesGood(double cost, String name) {
         this.cost = cost;
         this.name = name;
-     }
+    }
 
-    public double getCost(){
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(double cost){
+    public void setCost(double cost) {
         this.cost = cost;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -62,11 +67,14 @@ public abstract class ArticlesGood {
 
     public static void main(String[] args) {
         Boots boots = new Boots();
+        Boots boots1 = new Boots();
         boots.insert();
         System.out.println(boots.count());
         System.out.println(boots.bootsList.toString());
         System.out.println(boots.bootsList.get(1));
-
+        List<Boots> compareBoots = new ArrayList<Boots>(boots.bootsList);
+        Collections.sort(compareBoots,new CostCompare());
+        System.out.println(compareBoots);
 
     }
 
