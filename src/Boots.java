@@ -122,7 +122,7 @@ public class Boots extends AbstractProduct implements Comparable<AbstractProduct
         return count;
     }
 
-    List<Boots> sortCost(){
+    List<Boots> sortPrice(){
         Collections.sort(bootsList);
         return bootsList;
     }

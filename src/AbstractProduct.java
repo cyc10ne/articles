@@ -40,8 +40,6 @@ public abstract class AbstractProduct {
                 '}';
     }
 
-    public abstract int compareTo(AbstractProduct boots);
-
     static double averageCost(List<AbstractProduct> abstractProduct){
         double element = 0.0;
         for(int i = 0; i < abstractProduct.size(); i++)
@@ -55,15 +53,10 @@ public abstract class AbstractProduct {
         boots.insert();
         boots.print();
             System.out.println();
-        boots.sortCost();
+        boots.sortPrice();
         boots.print();
             System.out.println();
-        shoes.insert();
-        shoes.print();
-            System.out.println();
-        shoes.sortCost();
-        shoes.print();
-            System.out.println();
+
         List<AbstractProduct> agShoes = new ArrayList<AbstractProduct>(shoes.shoesList);
         List<AbstractProduct> agBoots = new ArrayList<AbstractProduct>(boots.bootsList);
         System.out.println("Средняя цена туфлей: " + averageCost(agShoes));
