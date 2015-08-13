@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * Created by cyc10ne on 08.08.2015.
  */
@@ -95,9 +91,9 @@ public class Boots extends AbstractProduct implements Comparable<AbstractProduct
                 '}';
     }
 
-    List<Boots> bootsList = new ArrayList<Boots>();
+    /*List<Boots> bootsList = new ArrayList<Boots>();
 
-    List<Boots> insert() {
+    List<Boots> add() {
         bootsList.add(new Boots(43, "black"));
         bootsList.add(new Boots(39, "red"));
         bootsList.add(new Boots(41, "brown"));
@@ -123,7 +119,7 @@ public class Boots extends AbstractProduct implements Comparable<AbstractProduct
     List<Boots> sortPrice(){
         Collections.sort(bootsList);
         return bootsList;
-    }
+    }*/
 
     @Override
     public int compareTo(AbstractProduct boots) {
@@ -136,7 +132,7 @@ public class Boots extends AbstractProduct implements Comparable<AbstractProduct
             return 1;
     }
 
-    Object accessIndex(int index) {
+   /* Object accessIndex(int index) {
         Object a = null;
         for (int i = 0; i < bootsList.size(); i++)
             if (i == index)
@@ -147,10 +143,7 @@ public class Boots extends AbstractProduct implements Comparable<AbstractProduct
     public void print(){
         for(Boots b: bootsList)
             System.out.println(b);
-    }
-
-
-
+    }*/
 }
 
 

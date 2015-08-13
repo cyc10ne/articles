@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -48,17 +47,21 @@ public abstract class AbstractProduct {
     }
 
     public static void main(String[] args) {
+            OperationProducts operationProducts = new OperationProducts();
             Boots boots = new Boots();
-        boots.insert();
-        boots.print();
+            TennisRacquet tennisRacquet = new TennisRacquet();
+        operationProducts.addBoots();
+        operationProducts.addRacquet();
+        operationProducts.print();
+       /* boots.print();
             System.out.println();
         boots.sortPrice();
         boots.print();
             System.out.println();
 
-        List<AbstractProduct> agBoots = new ArrayList<AbstractProduct>(boots.bootsList);
+        List<AbstractProduct> agBoots = new ArrayList<AbstractProduct>(boots.bootsList);*/
 //        System.out.println("Средняя цена туфлей: " + averageCost(agShoes));
-        System.out.println("Средняя цена ботинок: " + averageCost(agBoots));
+//        System.out.println("Средняя цена ботинок: " + averageCost(agBoots));
     }
 
 
