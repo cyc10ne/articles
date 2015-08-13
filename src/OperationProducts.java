@@ -81,9 +81,9 @@ public class OperationProducts extends AbstractProduct {
 
     Object accessRacquetById(int id) {
         Object a = null;
-        for (int i = 0; i < bootsList.size(); i++)
+        for (int i = 0; i < racquetList.size(); i++)
             if (i == id)
-                a = bootsList.get(id);
+                a = racquetList.get(id);
         return a;
     }
 

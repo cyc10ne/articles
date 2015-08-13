@@ -62,6 +62,9 @@ public abstract class AbstractProduct implements Comparable<AbstractProduct>{
 
         System.out.println("Boots = " + operationProducts.countBoots());
         System.out.println("Raquet = " + operationProducts.countRacquets());
+        System.out.println();
+        System.out.println("Доступ к ботинкам по id: " + operationProducts.accessBootsById(5));
+        System.out.println("Доступ к теннисным ракеткам по id: " + operationProducts.accessRacquetById(5));
 
         List<AbstractProduct> averagePriceBoots = new ArrayList<AbstractProduct>(operationProducts.bootsList);
         List<AbstractProduct> averagePriceRacquet = new ArrayList<AbstractProduct>(operationProducts.racquetList);
