@@ -49,7 +49,6 @@ public abstract class AbstractProduct {
 
     public static void main(String[] args) {
             Boots boots = new Boots();
-            Shoes shoes = new Shoes();
         boots.insert();
         boots.print();
             System.out.println();
@@ -57,9 +56,8 @@ public abstract class AbstractProduct {
         boots.print();
             System.out.println();
 
-        List<AbstractProduct> agShoes = new ArrayList<AbstractProduct>(shoes.shoesList);
         List<AbstractProduct> agBoots = new ArrayList<AbstractProduct>(boots.bootsList);
-        System.out.println("Средняя цена туфлей: " + averageCost(agShoes));
+//        System.out.println("Средняя цена туфлей: " + averageCost(agShoes));
         System.out.println("Средняя цена ботинок: " + averageCost(agBoots));
     }
 
