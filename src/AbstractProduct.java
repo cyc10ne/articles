@@ -7,7 +7,6 @@ import java.util.List;
 public abstract class AbstractProduct implements Comparable<AbstractProduct>{
    protected double price;
    protected String name;
-   protected int id;
 
     public AbstractProduct() {
     }
