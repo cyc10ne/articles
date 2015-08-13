@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by cyc10ne on 08.08.2015.
  */
-public class Shoes extends ArticlesGood implements Comparable<ArticlesGood>{
+public class Shoes extends AbstractProduct implements Comparable<AbstractProduct>{
 
     int size;
     String color;
@@ -19,28 +19,28 @@ public class Shoes extends ArticlesGood implements Comparable<ArticlesGood>{
 
         switch (getSize()) {
             case 39:
-                cost = 14.05;
+                price = 14.05;
                 break;
             case 40:
-                cost = 15.65;
+                price = 15.65;
                 break;
             case 41:
-                cost = 16.58;
+                price = 16.58;
                 break;
             case 42:
-                cost = 17.50;
+                price = 17.50;
                 break;
             case 43:
-                cost = 18.80;
+                price = 18.80;
                 break;
             case 44:
-                cost = 19.60;
+                price = 19.60;
                 break;
             case 45:
-                cost = 21.40;
+                price = 21.40;
                 break;
             case 46:
-                cost = 22.30;
+                price = 22.30;
                 break;
         }
         this.color = color;
@@ -67,7 +67,7 @@ public class Shoes extends ArticlesGood implements Comparable<ArticlesGood>{
         return "Shoes{" +
                 "size=" + size +
                 ", color='" + color + '\'' +
-                ", cost=" + cost +
+                ", price=" + price +
                 '}';
     }
 
@@ -102,11 +102,11 @@ public class Shoes extends ArticlesGood implements Comparable<ArticlesGood>{
     }
 
     @Override
-    public int compareTo(ArticlesGood shoes) {
-        if (this.cost < shoes.getCost())
+    public int compareTo(AbstractProduct shoes) {
+        if (this.price < shoes.getPrice())
             return -1;
         else
-            if (this.cost == shoes.getCost())
+            if (this.price == shoes.getPrice())
             return 0;
         else
             return 1;

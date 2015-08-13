@@ -4,24 +4,24 @@ import java.util.List;
 /**
  * Created by cyc10ne on 08.08.2015.
  */
-public abstract class ArticlesGood {
-    double cost;
+public abstract class AbstractProduct {
+    double price;
     String name;
 
-    public ArticlesGood() {
+    public AbstractProduct() {
     }
 
-    public ArticlesGood(double cost, String name) {
-        this.cost = cost;
+    public AbstractProduct(double price, String name) {
+        this.price = price;
         this.name = name;
     }
 
-    public double getCost() {
-        return cost;
+    public double getPrice() {
+        return price;
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public String getName() {
@@ -37,9 +37,9 @@ public abstract class ArticlesGood {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ArticlesGood that = (ArticlesGood) o;
+        AbstractProduct that = (AbstractProduct) o;
 
-        if (Double.compare(that.cost, cost) != 0) return false;
+        if (Double.compare(that.price, price) != 0) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
 
         return true;
@@ -49,7 +49,7 @@ public abstract class ArticlesGood {
     public int hashCode() {
         int result;
         long temp;
-        temp = Double.doubleToLongBits(cost);
+        temp = Double.doubleToLongBits(price);
         result = (int) (temp ^ (temp >>> 32));
         result = 31 * result + (name != null ? name.hashCode() : 0);
         return result;
@@ -58,18 +58,18 @@ public abstract class ArticlesGood {
     @Override
     public String toString() {
         return "ArticlesGood{" +
-                "cost=" + cost +
+                "price=" + price +
                 ", name='" + name + '\'' +
                 '}';
     }
 
-    public abstract int compareTo(ArticlesGood boots);
+    public abstract int compareTo(AbstractProduct boots);
 
-    static double averageCost(List<ArticlesGood> articlesGood){
+    static double averageCost(List<AbstractProduct> abstractProduct){
         double element = 0.0;
-        for(int i = 0; i < articlesGood.size(); i++)
-             element += articlesGood.get(i).getCost();
-         return element/articlesGood.size();
+        for(int i = 0; i < abstractProduct.size(); i++)
+             element += abstractProduct.get(i).getPrice();
+         return element/ abstractProduct.size();
     }
 
     public static void main(String[] args) {
@@ -87,8 +87,8 @@ public abstract class ArticlesGood {
         shoes.sortCost();
         shoes.print();
             System.out.println();
-        List<ArticlesGood> agShoes = new ArrayList<ArticlesGood>(shoes.shoesList);
-        List<ArticlesGood> agBoots = new ArrayList<ArticlesGood>(boots.bootsList);
+        List<AbstractProduct> agShoes = new ArrayList<AbstractProduct>(shoes.shoesList);
+        List<AbstractProduct> agBoots = new ArrayList<AbstractProduct>(boots.bootsList);
         System.out.println("Средняя цена туфлей: " + averageCost(agShoes));
         System.out.println("Средняя цена ботинок: " + averageCost(agBoots));
     }

@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by cyc10ne on 08.08.2015.
  */
-public class Boots extends ArticlesGood implements Comparable<ArticlesGood>{
+public class Boots extends AbstractProduct implements Comparable<AbstractProduct>{
 
     int size;
     String color;
@@ -19,28 +19,28 @@ public class Boots extends ArticlesGood implements Comparable<ArticlesGood>{
 
         switch (getSize()) {
             case 39:
-                cost = 24.55;
+                price = 24.55;
                 break;
             case 40:
-                cost = 25.35;
+                price = 25.35;
                 break;
             case 41:
-                cost = 26.78;
+                price = 26.78;
                 break;
             case 42:
-                cost = 27.50;
+                price = 27.50;
                 break;
             case 43:
-                cost = 28.70;
+                price = 28.70;
                 break;
             case 44:
-                cost = 29.50;
+                price = 29.50;
                 break;
             case 45:
-                cost = 31.50;
+                price = 31.50;
                 break;
             case 46:
-                cost = 32.10;
+                price = 32.10;
                 break;
         }
         this.color = color;
@@ -67,7 +67,7 @@ public class Boots extends ArticlesGood implements Comparable<ArticlesGood>{
         return "Boots{" +
                 "size=" + size +
                 ", color='" + color + '\'' +
-                ", cost=" + cost +
+                ", price=" + price +
                 '}';
     }
 
@@ -102,11 +102,11 @@ public class Boots extends ArticlesGood implements Comparable<ArticlesGood>{
     }
 
     @Override
-    public int compareTo(ArticlesGood boots) {
-        if (this.cost < boots.getCost())
+    public int compareTo(AbstractProduct boots) {
+        if (this.price < boots.getPrice())
             return -1;
         else
-            if (this.cost == boots.getCost())
+            if (this.price == boots.getPrice())
             return 0;
         else
             return 1;
