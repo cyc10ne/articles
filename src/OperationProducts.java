@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by cyc10ne on 13.08.2015.
  */
-public class OperationProducts extends AbstractProduct{
+public class OperationProducts extends AbstractProduct {
 
     List<AbstractProduct> bootsList = new ArrayList<AbstractProduct>();
     List<AbstractProduct> racquetList = new ArrayList<AbstractProduct>();
@@ -45,5 +46,51 @@ public class OperationProducts extends AbstractProduct{
     public void printBootsList(){
         for(AbstractProduct b: bootsList)
             System.out.println(b);
+    }
+    int countBoots() {
+        int count = 0;
+        while (count < bootsList.size())
+            count++;
+        return count;
+    }
+
+    int countRacquets() {
+        int count = 0;
+        while (count < racquetList.size())
+            count++;
+        return count;
+    }
+
+    List<AbstractProduct> sortBootsByPrice(){
+        Collections.sort(bootsList);
+        return bootsList;
+    }
+
+    List<AbstractProduct> sortRacquetByPrice(){
+        Collections.sort(racquetList);
+        return racquetList;
+    }
+
+    Object accessBootsById(int id) {
+        Object a = null;
+        for (int i = 0; i < bootsList.size(); i++)
+            if (i == id)
+                a = bootsList.get(id);
+        return a;
+    }
+
+    Object accessRacquetById(int id) {
+        Object a = null;
+        for (int i = 0; i < bootsList.size(); i++)
+            if (i == id)
+                a = bootsList.get(id);
+        return a;
+    }
+
+    static double averageCost(List<AbstractProduct> abstractProduct){
+        double element = 0.0;
+        for(int i = 0; i < abstractProduct.size(); i++)
+            element += abstractProduct.get(i).getPrice();
+        return element/abstractProduct.size();
     }
 }

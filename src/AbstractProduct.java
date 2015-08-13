@@ -1,11 +1,13 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by cyc10ne on 08.08.2015.
  */
-public abstract class AbstractProduct {
+public abstract class AbstractProduct implements Comparable<AbstractProduct>{
    protected double price;
    protected String name;
+   protected int id;
 
     public AbstractProduct() {
     }
@@ -31,37 +33,41 @@ public abstract class AbstractProduct {
         this.name = name;
     }
 
-    /*@Override
-    public String toString() {
-        return "ArticlesGood{" +
-                "price=" + price +
-                ", name='" + name + '\'' +
-                '}';
-    }*/
-
-    static double averageCost(List<AbstractProduct> abstractProduct){
-        double element = 0.0;
-        for(int i = 0; i < abstractProduct.size(); i++)
-             element += abstractProduct.get(i).getPrice();
-         return element/ abstractProduct.size();
+    @Override
+    public int compareTo(AbstractProduct abstractProduct) {
+        if (this.price < abstractProduct.getPrice())
+            return -1;
+        else
+        if (this.price == abstractProduct.getPrice())
+            return 0;
+        else
+            return 1;
     }
 
     public static void main(String[] args) {
-            OperationProducts operationProducts = new OperationProducts();
-            Boots boots = new Boots();
-            TennisRacquet tennisRacquet = new TennisRacquet();
-        operationProducts.addBoots();
-        operationProducts.addRacquet();
-        operationProducts.print();
-       /* boots.print();
-            System.out.println();
-        boots.sortPrice();
-        boots.print();
-            System.out.println();
 
-        List<AbstractProduct> agBoots = new ArrayList<AbstractProduct>(boots.bootsList);*/
-//        System.out.println("Средняя цена туфлей: " + averageCost(agShoes));
-//        System.out.println("Средняя цена ботинок: " + averageCost(agBoots));
+        OperationProducts operationProducts = new OperationProducts();
+
+        operationProducts.addBoots();
+        operationProducts.printBootsList();
+        System.out.println();
+        operationProducts.sortBootsByPrice();
+        operationProducts.printBootsList();
+        System.out.println();
+        operationProducts.addRacquet();
+        operationProducts.printRacquetList();
+        System.out.println();
+        operationProducts.sortRacquetByPrice();
+        operationProducts.printRacquetList();
+
+        System.out.println("Boots = " + operationProducts.countBoots());
+        System.out.println("Raquet = " + operationProducts.countRacquets());
+
+        List<AbstractProduct> averagePriceBoots = new ArrayList<AbstractProduct>(operationProducts.bootsList);
+        List<AbstractProduct> averagePriceRacquet = new ArrayList<AbstractProduct>(operationProducts.racquetList);
+        System.out.println();
+        System.out.println("Средняя цена туфлей: " + OperationProducts.averageCost(averagePriceBoots));
+        System.out.println("Средняя цена теннисных ракеток: " + OperationProducts.averageCost(averagePriceRacquet));
     }
 
 

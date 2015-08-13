@@ -71,7 +71,7 @@ public class TennisRacquet extends AbstractProduct {
     public String toString() {
         return "TennisRacquet{" +
                 "Material='" + material + '\'' +
-                ", Manufactures company='" + companyManufactures + '\'' +
+                ", manufactures company='" + companyManufactures + '\'' +
                 ", price=" + price + '}';
     }
 }

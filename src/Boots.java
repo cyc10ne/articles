@@ -1,8 +1,7 @@
 /**
  * Created by cyc10ne on 08.08.2015.
  */
-public class Boots extends AbstractProduct implements Comparable<AbstractProduct>{
-
+public class Boots extends AbstractProduct{
     int size;
     String color;
 
@@ -85,65 +84,11 @@ public class Boots extends AbstractProduct implements Comparable<AbstractProduct
     @Override
     public String toString() {
         return "Boots{" +
-                "size=" + size +
+                "Size=" + size +
                 ", color='" + color + '\'' +
                 ", price=" + price +
                 '}';
     }
-
-    /*List<Boots> bootsList = new ArrayList<Boots>();
-
-    List<Boots> add() {
-        bootsList.add(new Boots(43, "black"));
-        bootsList.add(new Boots(39, "red"));
-        bootsList.add(new Boots(41, "brown"));
-        bootsList.add(new Boots(43, "black"));
-        bootsList.add(new Boots(45, "yellow"));
-        bootsList.add(new Boots(44, "black"));
-        bootsList.add(new Boots(40, "green"));
-        bootsList.add(new Boots(41, "brown"));
-        bootsList.add(new Boots(44, "black"));
-        bootsList.add(new Boots(39, "red"));
-
-        return bootsList;
-    }
-
-    int count() {
-        int count = 0;
-        while (count < bootsList.size())
-            count++;
-
-        return count;
-    }
-
-    List<Boots> sortPrice(){
-        Collections.sort(bootsList);
-        return bootsList;
-    }*/
-
-    @Override
-    public int compareTo(AbstractProduct boots) {
-        if (this.price < boots.getPrice())
-            return -1;
-        else
-            if (this.price == boots.getPrice())
-            return 0;
-        else
-            return 1;
-    }
-
-   /* Object accessIndex(int index) {
-        Object a = null;
-        for (int i = 0; i < bootsList.size(); i++)
-            if (i == index)
-                a = bootsList.get(index);
-        return a;
-    }
-
-    public void print(){
-        for(Boots b: bootsList)
-            System.out.println(b);
-    }*/
 }
 
 
