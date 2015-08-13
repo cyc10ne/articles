@@ -74,7 +74,6 @@ public class Boots extends AbstractProduct implements Comparable<AbstractProduct
         Boots boots = (Boots) o;
 
         if (size != boots.size) return false;
-        if (!bootsList.equals(boots.bootsList)) return false;
         if (!color.equals(boots.color)) return false;
 
         return true;
@@ -84,7 +83,6 @@ public class Boots extends AbstractProduct implements Comparable<AbstractProduct
     public int hashCode() {
         int result = size;
         result = 31 * result + color.hashCode();
-        result = 31 * result + bootsList.hashCode();
         return result;
     }
 
