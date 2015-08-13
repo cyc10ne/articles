@@ -67,6 +67,28 @@ public class Boots extends AbstractProduct implements Comparable<AbstractProduct
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Boots)) return false;
+
+        Boots boots = (Boots) o;
+
+        if (size != boots.size) return false;
+        if (!bootsList.equals(boots.bootsList)) return false;
+        if (!color.equals(boots.color)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = size;
+        result = 31 * result + color.hashCode();
+        result = 31 * result + bootsList.hashCode();
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "Boots{" +
                 "size=" + size +

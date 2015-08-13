@@ -33,29 +33,6 @@ public abstract class AbstractProduct {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        AbstractProduct that = (AbstractProduct) o;
-
-        if (Double.compare(that.price, price) != 0) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result;
-        long temp;
-        temp = Double.doubleToLongBits(price);
-        result = (int) (temp ^ (temp >>> 32));
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        return result;
-    }
-
-    @Override
     public String toString() {
         return "ArticlesGood{" +
                 "price=" + price +
