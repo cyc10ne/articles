@@ -16,11 +16,11 @@ public class Boots extends AbstractProduct implements Comparable<AbstractProduct
     public Boots(int size, String color) {
 
         this.size = size;
-        this.initialPrice();
+        this.bootsInitialPrice();
         this.color = color;
     }
 
-     void initialPrice(){
+    void bootsInitialPrice(){
 
         switch (getSize()) {
             case 39:

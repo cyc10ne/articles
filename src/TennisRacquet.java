@@ -3,22 +3,39 @@
  */
 public class TennisRacquet extends AbstractProduct {
 
-    String materilal;
+    String material;
     String companyManufactures;
 
     TennisRacquet(){}
 
     TennisRacquet(String materilal, String companyManufactures){
-        this.materilal = materilal;
+        this.material = materilal;
         this.companyManufactures = companyManufactures;
+        this.racquetInitialPrice();
     }
 
-    public String getMaterilal() {
-        return materilal;
+    void racquetInitialPrice(){
+        if(getCompanyManufactures().equals("Wilson"))
+           if(getMaterial().equals("Graphene"))
+                price =  199.0;
+        else
+           if(getMaterial().equals("Basalt"))
+                price =  99.0;
+        else
+        if(getCompanyManufactures().equals("Head"))
+           if (getMaterial().equals("Graphene"))
+                price = 189.95;
+        else
+           if(getMaterial().equals("Titanium"))
+                price = 79.55;
     }
 
-    public void setMaterilal(String materilal) {
-        this.materilal = materilal;
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
     }
 
     public String getCompanyManufactures() {
@@ -38,14 +55,14 @@ public class TennisRacquet extends AbstractProduct {
 
         if (companyManufactures != null ? !companyManufactures.equals(that.companyManufactures) : that.companyManufactures != null)
             return false;
-        if (materilal != null ? !materilal.equals(that.materilal) : that.materilal != null) return false;
+        if (material != null ? !material.equals(that.material) : that.material != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = materilal != null ? materilal.hashCode() : 0;
+        int result = material != null ? material.hashCode() : 0;
         result = 31 * result + (companyManufactures != null ? companyManufactures.hashCode() : 0);
         return result;
     }
@@ -53,7 +70,7 @@ public class TennisRacquet extends AbstractProduct {
     @Override
     public String toString() {
         return "TennisRacquet{" +
-                "materilal='" + materilal + '\'' +
+                "material='" + material + '\'' +
                 ", companyManufactures='" + companyManufactures + '\'' +
                 ", price=" + price + '}';
     }
