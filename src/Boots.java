@@ -16,6 +16,11 @@ public class Boots extends AbstractProduct implements Comparable<AbstractProduct
     public Boots(int size, String color) {
 
         this.size = size;
+        this.initialPrice();
+        this.color = color;
+    }
+
+     void initialPrice(){
 
         switch (getSize()) {
             case 39:
@@ -43,7 +48,6 @@ public class Boots extends AbstractProduct implements Comparable<AbstractProduct
                 price = 32.10;
                 break;
         }
-        this.color = color;
     }
 
     public int getSize() {
