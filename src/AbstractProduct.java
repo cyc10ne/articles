@@ -5,8 +5,8 @@ import java.util.List;
  * Created by cyc10ne on 08.08.2015.
  */
 public abstract class AbstractProduct {
-    double price;
-    String name;
+   protected double price;
+   protected String name;
 
     public AbstractProduct() {
     }
