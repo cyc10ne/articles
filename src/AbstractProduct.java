@@ -32,13 +32,13 @@ public abstract class AbstractProduct {
         this.name = name;
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "ArticlesGood{" +
                 "price=" + price +
                 ", name='" + name + '\'' +
                 '}';
-    }
+    }*/
 
     static double averageCost(List<AbstractProduct> abstractProduct){
         double element = 0.0;

@@ -29,5 +29,32 @@ public class TennisRacquet extends AbstractProduct {
         this.companyManufactures = companyManufactures;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TennisRacquet)) return false;
 
+        TennisRacquet that = (TennisRacquet) o;
+
+        if (companyManufactures != null ? !companyManufactures.equals(that.companyManufactures) : that.companyManufactures != null)
+            return false;
+        if (materilal != null ? !materilal.equals(that.materilal) : that.materilal != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = materilal != null ? materilal.hashCode() : 0;
+        result = 31 * result + (companyManufactures != null ? companyManufactures.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "TennisRacquet{" +
+                "materilal='" + materilal + '\'' +
+                ", companyManufactures='" + companyManufactures + '\'' +
+                ", price=" + price + '}';
+    }
 }
