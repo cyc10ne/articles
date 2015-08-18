@@ -77,17 +77,22 @@ public class OperationProducts extends AbstractProduct {
 
     Boots accessBootsById(int id) {
         Boots Boots = null;
-        for (int i = 0; i < bootsList.size(); i++)
-            if (i == id)
+        for (int i = 0; i < bootsList.size(); i++){
+            if (i == id){
                 Boots = (Boots) bootsList.get(id);
+                }
+            }
         return Boots;
     }
 
+
     TennisRacquet accessRacquetById(int id) {
         TennisRacquet TennisRacquet = null;
-        for (int i = 0; i < racquetList.size(); i++)
-            if (i == id)
+        for (int i = 0; i < racquetList.size(); i++){
+            if (i == id){
                 TennisRacquet = (TennisRacquet) racquetList.get(id);
+            }
+        }
         return TennisRacquet;
     }
 
