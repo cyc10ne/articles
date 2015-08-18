@@ -27,6 +27,7 @@ public abstract class AbstractProduct implements Comparable<AbstractProduct>{
 
     public void setName(String name) {
         this.name = name;
+
     }
 
     @Override

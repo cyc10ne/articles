@@ -3,8 +3,8 @@
  */
 public class TennisRacquet extends AbstractProduct {
 
-    String material;
-    String companyManufactures;
+    private String material;
+    private String companyManufactures;
 
     TennisRacquet(){}
 
@@ -14,13 +14,13 @@ public class TennisRacquet extends AbstractProduct {
         this.racquetInitialPrice();
     }
 
-    void racquetInitialPrice(){
+    double racquetInitialPrice(){
         if(getCompanyManufactures().equals("Wilson"))
            if(getMaterial().equals("Graphene"))
-                price =  199.0;
+                price = 199.0;
         else
            if(getMaterial().equals("Basalt"))
-                price =  99.0;
+                price = 99.0;
 
         if(getCompanyManufactures().equals("Head"))
            if (getMaterial().equals("Graphene"))
@@ -28,6 +28,7 @@ public class TennisRacquet extends AbstractProduct {
         else
            if(getMaterial().equals("Titanium"))
                 price = 79.55;
+        return price;
     }
 
     public String getMaterial() {

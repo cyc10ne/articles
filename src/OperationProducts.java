@@ -11,6 +11,7 @@ public class OperationProducts extends AbstractProduct {
     List<AbstractProduct> racquetList = new ArrayList<AbstractProduct>();
 
     List<AbstractProduct> addBoots() {
+//        bootsList.add(createBoots());
         bootsList.add(new Boots(43, "black"));
         bootsList.add(new Boots(39, "red"));
         bootsList.add(new Boots(41, "brown"));
@@ -24,6 +25,15 @@ public class OperationProducts extends AbstractProduct {
 
         return bootsList;
     }
+
+   /* void createBoots(Boots factory){
+        Boots boots = factory.;
+
+    }
+
+    void bootsInitialPrice(){
+           switch ()
+    }*/
 
     List<AbstractProduct> addRacquet(){
         racquetList.add(new TennisRacquet("Graphene","Wilson"));
@@ -48,17 +58,11 @@ public class OperationProducts extends AbstractProduct {
             System.out.println(b);
     }
     int countBoots() {
-        int count = 0;
-        while (count < bootsList.size())
-            count++;
-        return count;
+        return bootsList.size();
     }
 
     int countRacquets() {
-        int count = 0;
-        while (count < racquetList.size())
-            count++;
-        return count;
+        return racquetList.size();
     }
 
     List<AbstractProduct> sortBootsByPrice(){
@@ -71,20 +75,20 @@ public class OperationProducts extends AbstractProduct {
         return racquetList;
     }
 
-    Object accessBootsById(int id) {
-        Object a = null;
+    Boots accessBootsById(int id) {
+        Boots Boots = null;
         for (int i = 0; i < bootsList.size(); i++)
             if (i == id)
-                a = bootsList.get(id);
-        return a;
+                Boots = (Boots) bootsList.get(id);
+        return Boots;
     }
 
-    Object accessRacquetById(int id) {
-        Object a = null;
+    TennisRacquet accessRacquetById(int id) {
+        TennisRacquet TennisRacquet = null;
         for (int i = 0; i < racquetList.size(); i++)
             if (i == id)
-                a = racquetList.get(id);
-        return a;
+                TennisRacquet = (TennisRacquet) racquetList.get(id);
+        return TennisRacquet;
     }
 
     static double averageCost(List<AbstractProduct> abstractProduct){
