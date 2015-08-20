@@ -101,7 +101,7 @@ public class OperationProducts extends AbstractProduct implements AbstractProduc
         double element = 0.0;
         for(int i = 0; i < abstractProduct.size(); i++)
             element += abstractProduct.get(i).getPrice();
-        return element/abstractProduct.size();
+        return Math.round(element / abstractProduct.size());
     }
 
     public static void main(String[] args) {
@@ -129,7 +129,7 @@ public class OperationProducts extends AbstractProduct implements AbstractProduc
         List<AbstractProduct> averagePriceBoots = new ArrayList<AbstractProduct>(operationProducts.bootsList);
         List<AbstractProduct> averagePriceRacquet = new ArrayList<AbstractProduct>(operationProducts.racquetList);
         System.out.println();
-        System.out.println("Средняя цена туфлей: " + OperationProducts.averageCost(averagePriceBoots));
+        System.out.println("Средняя цена ботинок: " + OperationProducts.averageCost(averagePriceBoots));
         System.out.println("Средняя цена теннисных ракеток: " + OperationProducts.averageCost(averagePriceRacquet));
     }
 }

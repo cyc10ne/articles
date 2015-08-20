@@ -27,7 +27,6 @@ public abstract class AbstractProduct implements Comparable<AbstractProduct>{
 
     public void setName(String name) {
         this.name = name;
-
     }
 
     @Override
@@ -40,8 +39,4 @@ public abstract class AbstractProduct implements Comparable<AbstractProduct>{
         else
             return 1;
     }
-
-
-
-
 }
