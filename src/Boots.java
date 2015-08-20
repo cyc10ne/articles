@@ -8,9 +8,11 @@ public class Boots extends AbstractProduct{
     public Boots() {
     }
 
-    public Boots(int size, String color) {
+    public Boots(String name,String color, int size, double price) {
+        super.name = name;
         this.size = size;
         this.color = color;
+        super.price = price;
     }
 
 

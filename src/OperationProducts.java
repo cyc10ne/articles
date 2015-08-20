@@ -5,35 +5,26 @@ import java.util.List;
 /**
  * Created by cyc10ne on 13.08.2015.
  */
-public class OperationProducts extends AbstractProduct {
+public class OperationProducts extends AbstractProduct implements AbstractProductAbstractFabric {
 
     List<AbstractProduct> bootsList = new ArrayList<AbstractProduct>();
     List<AbstractProduct> racquetList = new ArrayList<AbstractProduct>();
 
     List<AbstractProduct> addBoots() {
-//        bootsList.add(createBoots());
-        bootsList.add(new Boots(43, "black"));
-        bootsList.add(new Boots(39, "red"));
-        bootsList.add(new Boots(41, "brown"));
-        bootsList.add(new Boots(43, "black"));
-        bootsList.add(new Boots(45, "yellow"));
-        bootsList.add(new Boots(44, "black"));
-        bootsList.add(new Boots(40, "green"));
-        bootsList.add(new Boots(41, "brown"));
-        bootsList.add(new Boots(44, "black"));
-        bootsList.add(new Boots(39, "red"));
+        bootsList.add(createBoots("Nord", "Black", 46, 32.58));
+        bootsList.add(createBoots("Timberland", "White", 42, 132.55));
+        bootsList.add(createBoots("Grinders", "Black", 44, 162.25));
+        bootsList.add(createBoots("Clarks", "Black", 45, 200.67));
+        bootsList.add(createBoots("Kari", "Black", 41, 60.99));
+        bootsList.add(createBoots("Geox", "Grey", 40, 100.05));
+        bootsList.add(createBoots("Ecco", "Grey", 45, 90.05));
+        bootsList.add(createBoots("Panama Jack", "Blue", 39, 200.05));
+        bootsList.add(createBoots("Gucci", "Pink", 39, 100.99));
+        bootsList.add(createBoots("Lacoste", "Black", 38, 120.50));
+
 
         return bootsList;
     }
-
-   /* void createBoots(Boots factory){
-        Boots boots = factory.;
-
-    }
-
-    void bootsInitialPrice(){
-           switch ()
-    }*/
 
     List<AbstractProduct> addRacquet(){
         racquetList.add(new TennisRacquet("Graphene","Wilson"));
@@ -48,15 +39,25 @@ public class OperationProducts extends AbstractProduct {
         return racquetList;
     }
 
+    @Override
+    public Boots createBoots(String name, String color, int size, double price) {
+        return new Boots(name,color,size,price);
+    }
+
+    @Override
+    public TennisRacquet createTennisRacquet() {
+        return null;
+    }
+
     public void printRacquetList(){
         for(AbstractProduct b: racquetList)
             System.out.println(b);
     }
-
     public void printBootsList(){
         for(AbstractProduct b: bootsList)
             System.out.println(b);
     }
+
     int countBoots() {
         return bootsList.size();
     }
@@ -75,6 +76,7 @@ public class OperationProducts extends AbstractProduct {
         return racquetList;
     }
 
+
     Boots accessBootsById(int id) {
         Boots Boots = null;
         for (int i = 0; i < bootsList.size(); i++){
@@ -84,7 +86,6 @@ public class OperationProducts extends AbstractProduct {
             }
         return Boots;
     }
-
 
     TennisRacquet accessRacquetById(int id) {
         TennisRacquet TennisRacquet = null;
@@ -122,8 +123,8 @@ public class OperationProducts extends AbstractProduct {
         System.out.println("Boots = " + operationProducts.countBoots());
         System.out.println("Raquet = " + operationProducts.countRacquets());
         System.out.println();
-        System.out.println("Доступ к ботинкам по id: " + operationProducts.accessBootsById(5));
         System.out.println("Доступ к теннисным ракеткам по id: " + operationProducts.accessRacquetById(5));
+        System.out.println("Доступ к ботинкам по id: " + operationProducts.accessBootsById(5));
 
         List<AbstractProduct> averagePriceBoots = new ArrayList<AbstractProduct>(operationProducts.bootsList);
         List<AbstractProduct> averagePriceRacquet = new ArrayList<AbstractProduct>(operationProducts.racquetList);
