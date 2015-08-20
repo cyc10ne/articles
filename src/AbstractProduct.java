@@ -31,12 +31,6 @@ public abstract class AbstractProduct implements Comparable<AbstractProduct>{
 
     @Override
     public int compareTo(AbstractProduct abstractProduct) {
-        if (this.price < abstractProduct.getPrice())
-            return -1;
-        else
-        if (this.price == abstractProduct.getPrice())
-            return 0;
-        else
-            return 1;
+     return (this.price < abstractProduct.getPrice() ? -1 : (this.price == abstractProduct.getPrice() ? 0 : 1));
     }
 }
