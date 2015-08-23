@@ -97,6 +97,7 @@ public class OperationProducts extends AbstractProduct {
     public static void main(String[] args) {
 
         OperationProducts operationProducts = new OperationProducts();
+
         operationProducts.addBoots();
         operationProducts.printBootsList();
         System.out.println();
