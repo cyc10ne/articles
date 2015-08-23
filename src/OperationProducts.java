@@ -5,48 +5,38 @@ import java.util.List;
 /**
  * Created by cyc10ne on 13.08.2015.
  */
-public class OperationProducts extends AbstractProduct implements AbstractProductAbstractFabric {
+public class OperationProducts extends AbstractProduct {
 
     List<AbstractProduct> bootsList = new ArrayList<AbstractProduct>();
     List<AbstractProduct> racquetList = new ArrayList<AbstractProduct>();
 
     List<AbstractProduct> addBoots() {
-        bootsList.add(createBoots("Nord", "Black", 46, 32.58));
-        bootsList.add(createBoots("Timberland", "White", 42, 132.55));
-        bootsList.add(createBoots("Grinders", "Black", 44, 162.25));
-        bootsList.add(createBoots("Clarks", "Black", 45, 200.67));
-        bootsList.add(createBoots("Kari", "Black", 41, 60.99));
-        bootsList.add(createBoots("Geox", "Grey", 40, 100.05));
-        bootsList.add(createBoots("Ecco", "Grey", 45, 90.05));
-        bootsList.add(createBoots("Panama Jack", "Blue", 39, 200.05));
-        bootsList.add(createBoots("Gucci", "Pink", 39, 100.99));
-        bootsList.add(createBoots("Lacoste", "Black", 38, 120.50));
+        bootsList.add(new Boots("Nord", "Black", 46, 32.58));
+        bootsList.add(new Boots("Timberland", "White", 42, 132.55));
+        bootsList.add(new Boots("Grinders", "Black", 44, 162.25));
+        bootsList.add(new Boots("Clarks", "Black", 45, 200.67));
+        bootsList.add(new Boots("Kari", "Black", 41, 60.99));
+        bootsList.add(new Boots("Geox", "Grey", 40, 100.05));
+        bootsList.add(new Boots("Ecco", "Grey", 45, 90.05));
+        bootsList.add(new Boots("Panama Jack", "Blue", 39, 200.05));
+        bootsList.add(new Boots("Gucci", "Pink", 39, 100.99));
+        bootsList.add(new Boots("Lacoste", "Black", 38, 120.50));
 
 
         return bootsList;
     }
 
     List<AbstractProduct> addRacquet(){
-        racquetList.add(new TennisRacquet("Graphene","Wilson"));
-        racquetList.add(new TennisRacquet("Basalt","Wilson"));
-        racquetList.add(new TennisRacquet("Titanium","Head"));
-        racquetList.add(new TennisRacquet("Graphene","Head"));
-        racquetList.add(new TennisRacquet("Graphene","Wilson"));
-        racquetList.add(new TennisRacquet("Basalt","Wilson"));
-        racquetList.add(new TennisRacquet("Titanium","Head"));
-        racquetList.add(new TennisRacquet("Graphene","Head"));
+        racquetList.add(new TennisRacquet("Tennis racquet","Graphene","Wilson",198.0));
+        racquetList.add(new TennisRacquet("Tennis racquet","Basalt","Wilson", 99.0 ));
+        racquetList.add(new TennisRacquet("Tennis racquet","Titanium","Head", 126.0));
+        racquetList.add(new TennisRacquet("Tennis racquet","Graphene","Head", 156.5));
+        racquetList.add(new TennisRacquet("Tennis racquet","Graphene","Wilson", 201.1));
+        racquetList.add(new TennisRacquet("Tennis racquet","Basalt","Wilson", 189.0));
+        racquetList.add(new TennisRacquet("Tennis racquet","Titanium","Head", 95.20));
+        racquetList.add(new TennisRacquet("Tennis racquet","Graphene","Head", 113.7));
 
         return racquetList;
-    }
-
-    @Override
-    public Boots createBoots(String name, String color, int size, double price) {
-        return new Boots(name,color,size,price);
-    }
-
-    @Override
-    public TennisRacquet createTennisRacquet() {
-        return null;
     }
 
     public void printRacquetList(){
